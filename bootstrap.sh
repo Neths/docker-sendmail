@@ -18,11 +18,11 @@ sudo groupadd docker
 
 sudo usermod -aG docker vagrant
 
-sudo wget https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+sudo wget -O /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m`
 
 sudo chmod +x /usr/local/bin/docker-compose
 
-sudo wget https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
+sudo wget -O /etc/bash_completion.d/docker-compose https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose
 
 rm  -f /home/vagrant/.bashrc
 wget -O /home/vagrant/.bashrc https://github.com/Neths/commons/raw/master/.bashrc
